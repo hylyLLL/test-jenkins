@@ -1,4 +1,4 @@
-package com.oschina.testjenkins.test;
+package com.oschina.testjenkins;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
