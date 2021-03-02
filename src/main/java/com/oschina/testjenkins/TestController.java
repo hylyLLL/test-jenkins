@@ -1,4 +1,4 @@
-package com.oschina.testjenkins.test;
+package com.oschina.testjenkins;
 
 import com.oschina.testjenkins.UserService;
 import io.swagger.annotations.Api;
