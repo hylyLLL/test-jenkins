@@ -1,8 +1,10 @@
 package com.oschina.testjenkins.test;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.oschina.testjenkins.UserService;
+import io.swagger.annotations.Api;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author hyly
@@ -12,10 +14,34 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/test")
+@Api("test")
 public class TestController {
+    @Autowired
+    private UserService userService;
 
-    @GetMapping("hello")
-    public String test(String msg){
+//    @SystemLog(module = "test", methods = "测试事务", logType = LogType.OPERA, operateType = OperateType.QUERY)
+    @GetMapping("/hello")
+    public String test(String msg) {
+//        return userService.test();
+        int a=Integer.parseInt(null);
+
         return msg;
+    }
+
+
+    @GetMapping("/ttt")
+    public String test(User user) {
+        return userService.test();
+    }
+
+    @Autowired
+    ModelMapper modelMapper;
+
+    @PostMapping("/add")
+    public String add(@RequestBody User user,String a) {
+        System.out.println(user);
+
+        modelMapper.map(user, UserDto.class);
+        return user.getName();
     }
 }

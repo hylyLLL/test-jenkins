@@ -1,0 +1,14 @@
+
+#sqlserver
+url = jdbc:sqlserver://localhost:1433; DatabaseName=test_db
+driver =com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+user = sa
+pass = root
+## 可选配置
+# 是否在日志中显示执行的SQL
+showSql = true
+# 是否格式化显示的SQL
+formatSql = false
+# 是否显示SQL参数
+showParams = true

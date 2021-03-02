@@ -2,12 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.oschina</groupId>
     <artifactId>test-jenkins</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -21,7 +23,122 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <!--    <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.mitre.dsmiley.httpproxy</groupId>
+            <artifactId>smiley-http-proxy-servlet</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <!--      <dependency>
+                  <groupId>com.google.guava</groupId>
+                  <artifactId>guava</artifactId>
+                  <version>18.0</version>
+              </dependency>-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--        <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-jdbc</artifactId>
+                </dependency>-->
+
+        <!--mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+        </dependency>
+        <!--        <dependency>
+                    <groupId>com.oschina</groupId>
+                    <artifactId>test-jenkins</artifactId>
+                    <version>0.0.1-20200606.082255-2</version>
+                </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.3.8</version>
+        </dependency>
+
+        <!-- Swagger -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+        <!-- END Swagger -->
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.0</version>
+        </dependency>
+
+
+        <!--        导入excel-->
+        <!--  <dependency>
+              <groupId>org.apache.poi</groupId>
+              <artifactId>poi-ooxml</artifactId>
+              <version>3.14-beta1</version>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.poi</groupId>
+              <artifactId>poi-ooxml-schemas</artifactId>
+              <version>3.14-beta1</version>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.poi</groupId>
+              <artifactId>poi</artifactId>
+              <version>3.14-beta1</version>
+          </dependency>-->
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>easyexcel</artifactId>
+            <version>2.1.6</version>
         </dependency>
 
         <dependency>
@@ -46,4 +163,33 @@
         </plugins>
     </build>
 
+
+    <!--下载nexus中的jar配置，如果setting.xml文件中配置了这个可以不用配置-->
+    <!--    <repositories>
+            <repository>
+                <id>public</id>
+                <name>release</name>
+                <url>http://47.102.192.50:8081/repository/maven-public/</url>
+            </repository>
+        </repositories>
+
+
+        &lt;!&ndash;配置上传jar的配置，发布管理&ndash;&gt;
+        <distributionManagement>
+            <repository>
+                &lt;!&ndash;这个id需要和setting文件中server节点中的id一致&ndash;&gt;
+                <id>public</id>
+                &lt;!&ndash;表示放道release库下&ndash;&gt;
+                <name>releases</name>
+                <url>http://192.168.199.88:8081/repository/maven-releases/</url>
+            </repository>
+
+            <snapshotRepository>
+                &lt;!&ndash;这个id需要和setting文件中server节点中的id一致&ndash;&gt;
+                <id>public</id>
+                &lt;!&ndash;表示放道release库下&ndash;&gt;
+                <name>snapshots</name>
+                <url>http://192.168.199.88:8081/repository/maven-snapshots/</url>
+            </snapshotRepository>
+        </distributionManagement>-->
 </project>
